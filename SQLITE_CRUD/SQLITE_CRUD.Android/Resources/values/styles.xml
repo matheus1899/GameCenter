@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+  <style name="MainTheme" parent="MainTheme.DarkBlue">
+  
+  </style>
+  
+  <style name="MainTheme.DarkBlue" parent="Theme.AppCompat.Light.DarkActionBar">
+    <item name="windowNoTitle">true</item>
+    <item name="windowActionBar">false</item>
+    <item name="colorPrimary">#000d16</item>
+    <item name="colorPrimaryDark">#000000</item>
+    <item name="colorAccent">#0066bc</item>
+    <item name="windowActionModeOverlay">true</item>
+    <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
+  </style>
+
+  <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+    <item name="colorAccent">#FFF</item>
+  </style>
+</resources>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLITE_CRUD.MenuDetail">
+    
+    <StackLayout BackgroundColor="{DynamicResource MenuCabecalho_BackgroundColor}">
+        <StackLayout Orientation="Horizontal" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+            <BoxView BackgroundColor="Green" HorizontalOptions="FillAndExpand" HeightRequest="10"/>
+            <BoxView BackgroundColor="RoyalBlue" HorizontalOptions="FillAndExpand" HeightRequest="10"/>
+            <BoxView BackgroundColor="#bc0000" HorizontalOptions="FillAndExpand" HeightRequest="10"/>
+        </StackLayout>
+        <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Grid.RowDefinitions >
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="2*"/>
+                <ColumnDefinition  Width="4*"/>
+                <ColumnDefinition  Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="game_center03.png" Grid.Row="0" Grid.Column="1"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

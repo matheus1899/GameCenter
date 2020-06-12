@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLITE_CRUD.Consulta_Jogo">
+    <ScrollView BackgroundColor="{DynamicResource Page_BackgroundColor}">
+        <AbsoluteLayout>
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,0.01" AbsoluteLayout.LayoutFlags="All" Orientation="Horizontal" Spacing="0" HorizontalOptions="FillAndExpand">
+                <BoxView BackgroundColor="Green" HorizontalOptions="FillAndExpand" HeightRequest="10"/>
+                <BoxView BackgroundColor="RoyalBlue" HorizontalOptions="FillAndExpand" HeightRequest="10"/>
+                <BoxView BackgroundColor="#bc0000" HorizontalOptions="FillAndExpand" HeightRequest="10"/>
+            </StackLayout>
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0.3,1,0.8" AbsoluteLayout.LayoutFlags="All" Padding="10">
+                <ImageButton x:Name="btn_Foto" Source="gamepad" Clicked="btn_FotoClicked" WidthRequest="70" HeightRequest="120" HorizontalOptions="FillAndExpand"
+                             BackgroundColor="Transparent" Margin="0,30,0,0"/>
+                <Entry Text="" x:Name="nome" Placeholder="Nome do jogo" HorizontalOptions="FillAndExpand" Opacity="0.7"
+                       TextColor="{DynamicResource Entry_TextColor}" PlaceholderColor="{DynamicResource Entry_PlaceholderColor}"/>
+                <Entry Text="" x:Name="genero" Placeholder="Gênero" HorizontalOptions="FillAndExpand" Opacity="0.7" 
+                       TextColor="{DynamicResource Entry_TextColor}" PlaceholderColor="{DynamicResource Entry_PlaceholderColor}"/>
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Entry Text="" x:Name="class_indicativa" Placeholder="Faixa etária" HorizontalOptions="FillAndExpand" Opacity="0.7" MaxLength="2"
+                           TextColor="{DynamicResource Entry_TextColor}" PlaceholderColor="{DynamicResource Entry_PlaceholderColor}"/>
+                    <Entry Text="" x:Name="plataforma" Placeholder="Plataforma" HorizontalOptions="FillAndExpand" Opacity="0.7"
+                           TextColor="{DynamicResource Entry_TextColor}" PlaceholderColor="{DynamicResource Entry_PlaceholderColor}"/>
+                    <Entry Text="" x:Name="ano" Placeholder="Ano" HorizontalOptions="FillAndExpand" Opacity="0.7" MaxLength="4" 
+                           TextColor="{DynamicResource Entry_TextColor}" PlaceholderColor="{DynamicResource Entry_PlaceholderColor}"/>
+                </StackLayout>
+                <FlexLayout HorizontalOptions="Center">
+                    <Button Text="Limpar campos" Clicked="btnLimpar_campos" BackgroundColor="DarkRed" TextColor="White" FontAttributes="Bold" CornerRadius="10"/>
+                    <Button Text="Deletar jogo" Clicked="deletar_jogo" BackgroundColor="DarkRed" TextColor="White" FontAttributes="Bold" CornerRadius="10"/>
+                    <Button Text="Consultar" Clicked="consultar_jogo" BackgroundColor="DarkRed" TextColor="White" FontAttributes="Bold" CornerRadius="10"/>
+                    <Button Text="Alterar dados" Clicked="alterar_jogo" BackgroundColor="DarkRed" TextColor="White" FontAttributes="Bold" CornerRadius="10"/>
+                </FlexLayout>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ScrollView>
+</ContentPage>

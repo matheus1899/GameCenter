@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLITE_CRUD.ListarBanco">
+    
+    <ListView x:Name="list_view" BackgroundColor="{DynamicResource Page_BackgroundColor}" HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell >
+                    <StackLayout Orientation="Horizontal" Padding="10" VerticalOptions="CenterAndExpand">
+                        <Image Source="{Binding Dir_Imagem}" Aspect="AspectFill" HeightRequest="200" WidthRequest="150" />
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="{Binding Nome}" FontSize="Large" TextColor="{DynamicResource Label_Page_TextColor}" FontAttributes="Bold"/>
+                            <Label Text="{Binding Genero}" FontSize="Large" TextColor="{DynamicResource Label_Page_TextColor}"/>
+                            <Label Text="{Binding Plataforma}" FontSize="Large" TextColor="{DynamicResource Label_Page_TextColor}"/>
+                        </StackLayout>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

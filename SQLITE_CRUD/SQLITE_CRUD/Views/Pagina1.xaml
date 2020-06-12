@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLITE_CRUD.Pagina1">
+    <ScrollView>
+        <AbsoluteLayout 
+            BackgroundColor="{DynamicResource Page_BackgroundColor}">
+            <StackLayout 
+                AbsoluteLayout.LayoutBounds="0,0,1,0.01" 
+                AbsoluteLayout.LayoutFlags="All" 
+                Orientation="Horizontal" 
+                Spacing="0">
+                <BoxView 
+                    BackgroundColor="Green" 
+                    HorizontalOptions="FillAndExpand" 
+                    HeightRequest="10"/>
+                <BoxView 
+                    BackgroundColor="RoyalBlue" 
+                    HorizontalOptions="FillAndExpand" 
+                    HeightRequest="10"/>
+                <BoxView 
+                    BackgroundColor="DarkRed" 
+                    HorizontalOptions="FillAndExpand" 
+                    HeightRequest="10"/>
+            </StackLayout>
+            <StackLayout 
+                Orientation="Vertical" 
+                AbsoluteLayout.LayoutBounds="0,0.4,1,0.6" 
+                AbsoluteLayout.LayoutFlags="All" 
+                Padding="25">
+                <Label 
+                    Text="Cadastrar" 
+                    TextColor="{DynamicResource Label_Page_TextColor}" 
+                    FontSize="Large" 
+                    FontAttributes="Bold" 
+                    HorizontalOptions="Center"/>
+                <StackLayout 
+                    Orientation="Horizontal" 
+                    HorizontalOptions="CenterAndExpand" 
+                    Margin="0,10,0,0">
+                    <Label 
+                        Text="Admin?" 
+                        TextColor="{DynamicResource Label_Page_TextColor}" 
+                        FontAttributes="Bold" 
+                        FontSize="Medium" />
+                    <Switch 
+                        x:Name="switch_admin" 
+                        Toggled="OnToggled" />
+                </StackLayout>
+                <Entry 
+                    Placeholder="Nome e Sobrenome" 
+                    x:Name="nome" 
+                    ReturnType="Next" 
+                    ReturnCommand="Nome_to" 
+                    PlaceholderColor="{DynamicResource Entry_PlaceholderColor}" 
+                    TextColor="{DynamicResource Entry_TextColor}"/>
+                <Entry 
+                    Placeholder="CPF" 
+                    x:Name="cpf" 
+                    Keyboard="Numeric" 
+                    ReturnType="Next" 
+                    MaxLength="11" 
+                    PlaceholderColor="{DynamicResource Entry_PlaceholderColor}"
+                    TextColor="{DynamicResource Entry_TextColor}"/>
+                <Entry 
+                    Placeholder="Email" 
+                    x:Name="email" 
+                    Keyboard="Email" 
+                    ReturnType="Next" 
+                    PlaceholderColor="{DynamicResource Entry_PlaceholderColor}"
+                    TextColor="{DynamicResource Entry_TextColor}"/>
+            
+                <StackLayout Orientation="Horizontal">
+                    <Entry HorizontalOptions="FillAndExpand" 
+                           x:Name="senha" 
+                           TextChanged="senhaTextChanged" 
+                           Placeholder="Senha" 
+                           IsPassword="True"
+                           PlaceholderColor="{DynamicResource Entry_PlaceholderColor}" 
+                           TextColor="{DynamicResource Entry_TextColor}"/>
+                    <ImageButton 
+                        HorizontalOptions="End" 
+                        Source="eye" 
+                        HeightRequest="40" 
+                        WidthRequest="40" 
+                        Clicked="btnImageClicked" 
+                        BackgroundColor="Transparent"/>
+                </StackLayout>
+                <StackLayout 
+                    Orientation="Horizontal" 
+                    IsVisible="False" 
+                    x:Name="stack_Admin">
+                    <Entry 
+                        HorizontalOptions="FillAndExpand" 
+                        x:Name="senhaAdmin" 
+                        Placeholder="Código de Verificação" 
+                        IsPassword="True"
+                        PlaceholderColor="{DynamicResource Entry_PlaceholderColor}" 
+                        TextColor="{DynamicResource Entry_TextColor}"/>
+                    <ImageButton 
+                        HorizontalOptions="End" 
+                        Source="eye" 
+                        HeightRequest="40" 
+                        WidthRequest="40" 
+                        Clicked="btnImageClicked2" 
+                        BackgroundColor="Transparent"/>
+                </StackLayout>
+                <Label 
+                    Text="Por favor, mínimo de oito caracteres, sendo um caractere especial (@!#$%-/:?_) e uma letra maiúscula." 
+                    IsVisible="false" 
+                    x:Name="lbl_Aviso" 
+                    TextColor="{DynamicResource Label_Aviso}" 
+                    VerticalOptions="Center"/>
+                <StackLayout 
+                    Orientation="Horizontal" 
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                    <Button 
+                        Text="Limpar Campos" 
+                        BackgroundColor="DarkRed" 
+                        Clicked="btnLimparCampos" 
+                        TextColor="White" 
+                        FontAttributes="Bold" 
+                        CornerRadius="10"/>
+                    <Button 
+                        Text="Cadastrar" 
+                        BackgroundColor="DarkRed" 
+                        Clicked="btnEnviar" 
+                        TextColor="White" 
+                        FontAttributes="Bold" 
+                        CornerRadius="10"/>
+                </StackLayout>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ScrollView>
+</ContentPage>

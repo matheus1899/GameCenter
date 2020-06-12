@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SQLITE_CRUD"
+             x:Class="SQLITE_CRUD.Menu">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu" Padding="0">
+            <ContentPage.Content>
+                <StackLayout>
+                    <Grid BackgroundColor="{DynamicResource MenuCabecalho_BackgroundColor}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Text="Temas" TextColor="{DynamicResource Label_Page_TextColor}" FontAttributes="Bold" Grid.Column="1" Grid.Row="0" HorizontalOptions="CenterAndExpand" FontSize="Large" Margin="0,20,0,0"/>
+                        <StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="1" Spacing="10" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" Margin="0,0,0,0">
+                            <Button BackgroundColor="DarkBlue" Clicked="btn_TemaAzul" WidthRequest="45" HeightRequest="45" CornerRadius="45"/>
+                            <Button BackgroundColor="Green" Clicked="btn_TemaVerde" WidthRequest="45" HeightRequest="45" CornerRadius="45"/>
+                            <Button BackgroundColor="#a30000" Clicked="btn_TemaVermelho" WidthRequest="45" HeightRequest="45" CornerRadius="45"/>
+                            <Button BackgroundColor="#2e003a" Clicked="btn_TemaRoxo" WidthRequest="45" HeightRequest="45" CornerRadius="45"/>
+                            <Button BackgroundColor="#e5e5e5" Clicked="btn_TemaClaro" WidthRequest="45" HeightRequest="45" CornerRadius="45"/>
+                        </StackLayout>
+                        <Label Grid.Column="1" 
+                               Grid.Row="2" 
+                               TextColor="{DynamicResource Label_Page_TextColor}" 
+                               FontSize="Large"  Margin="0,20,0,20">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Olá" x:Name="lbl_cabecalho" FontAttributes="Bold"/>
+                                    <Span x:Name="lbl_face">
+                                        <Span.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String" 
+                                                        Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Solid"/>
+                                        </Span.FontFamily>
+                                    </Span>
+                                    
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </Grid>
+
+                    <ScrollView>
+                    <TableView Intent="Menu">
+                        <TableSection>
+                            <ViewCell Tapped="Go_Home">
+                                <StackLayout Padding="15,10">
+                                    <Label Text="Home" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium" 
+                                           TextColor="{DynamicResource Label_Menu_TextColor}"/>
+                                </StackLayout>
+                            </ViewCell>
+                            <ViewCell Tapped="Go_AlterarSenha">
+                                <StackLayout Padding="15,10">
+                                    <Label Text="Perfil" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium"
+                                           TextColor="{DynamicResource Label_Menu_TextColor}"/>
+                                </StackLayout>
+                            </ViewCell>
+                            <ViewCell x:Name="Add_Item" Tapped="Go_AdicionarJogo" >
+                                <StackLayout Padding="15,10" x:Name="stack_AddJogo">
+                                    <Label Text="Adicionar jogo" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium"
+                                           TextColor="{DynamicResource Label_Menu_TextColor}"/>
+                                </StackLayout>
+                            </ViewCell>
+                            <ViewCell x:Name="Consultar_jogo" Tapped="Go_ConsultarJogo">
+                                <StackLayout Padding="15,10" x:Name="stack_ConsultarJogo">
+                                    <Label Text="Consultar jogo específico" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium" 
+                                           TextColor="{DynamicResource Label_Menu_TextColor}"/>
+                                </StackLayout>
+                            </ViewCell>
+                            <ViewCell x:Name="Listar_Loja" Tapped="Go_ListaLoja" >
+                                <StackLayout Padding="15,10">
+                                        <Label Text="Ver jogos" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium"
+                                               TextColor="{DynamicResource Label_Menu_TextColor}"/>
+                                </StackLayout>
+                            </ViewCell>
+                            <ViewCell x:Name="Logout" Tapped="Go_LogOut" >
+                                <StackLayout Padding="15,10">
+                                        <Label Text="Logout" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Medium"
+                                               TextColor="{DynamicResource Label_Menu_TextColor}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </TableSection>
+                    </TableView>
+                    </ScrollView>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLITE_CRUD.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Page_BackgroundColor" >#001a2d</Color>
+            <Color x:Key="MenuCabecalho_BackgroundColor" >#001a2d</Color>
+            <Color x:Key="MenuItens_BackgroundColor" >White</Color>
+            
+            <Color x:Key="Entry_TextColor">White</Color>
+            <Color x:Key="Entry_PlaceholderColor">LightGray</Color>
+            
+            <Color x:Key="Label_Menu_TextColor">#001a2d</Color>
+            <Color x:Key="Label_Page_TextColor">White</Color>
+            <Color x:Key="Label_Cadastrar">LightBlue</Color>
+            <Color x:Key="Label_Aviso">#ea4444</Color>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

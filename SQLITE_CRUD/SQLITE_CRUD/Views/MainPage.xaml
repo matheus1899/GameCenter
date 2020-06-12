@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SQLITE_CRUD"
+             x:Class="SQLITE_CRUD.MainPage">
+    <ScrollView>
+        <AbsoluteLayout 
+            BackgroundColor="{DynamicResource Page_BackgroundColor}">
+            <StackLayout 
+                AbsoluteLayout.LayoutBounds="0,0,1,0.01" 
+                AbsoluteLayout.LayoutFlags="All" 
+                Orientation="Horizontal" 
+                Spacing="0">
+                <BoxView 
+                    BackgroundColor="Green" 
+                    HorizontalOptions="FillAndExpand" 
+                    HeightRequest="10"/>
+                <BoxView 
+                    BackgroundColor="RoyalBlue" 
+                    HorizontalOptions="FillAndExpand" 
+                    HeightRequest="10"/>
+                <BoxView 
+                    BackgroundColor="#bc0000" 
+                    HorizontalOptions="FillAndExpand" 
+                    HeightRequest="10"/>
+            </StackLayout>
+            
+            <StackLayout 
+                Orientation="Vertical" 
+                AbsoluteLayout.LayoutBounds="0,0.2,1,0.8" 
+                AbsoluteLayout.LayoutFlags="All" 
+                Padding="25" 
+                Spacing="10">
+
+                <Image 
+                    Source="game_center03.png" 
+                    WidthRequest="158" 
+                    HeightRequest="185" 
+                    Margin="25" 
+                    HorizontalOptions="Center"/>
+                <Label 
+                    Text="Login" 
+                    TextColor="{DynamicResource Label_Page_TextColor}" 
+                    FontSize="Large" 
+                    FontAttributes="Bold" 
+                    HorizontalOptions="Center" />
+                <Entry 
+                    Placeholder="Email" 
+                    PlaceholderColor="{DynamicResource Entry_PlaceholderColor}" 
+                    x:Name="email" 
+                    Keyboard="Email" 
+                    ReturnType="Next" 
+                    TextColor="{DynamicResource Entry_TextColor}"/>
+                <StackLayout 
+                    Orientation="Horizontal" 
+                    Spacing="5">
+                    <Entry 
+                        HorizontalOptions="FillAndExpand" 
+                        x:Name="senha" 
+                        TextChanged="senhaTextChanged" 
+                        Placeholder="Senha" 
+                        PlaceholderColor="{DynamicResource Entry_PlaceholderColor}" 
+                        IsPassword="True" 
+                        TextColor="{DynamicResource Entry_TextColor}"/>
+                    <ImageButton 
+                        HorizontalOptions="End" 
+                        Source="eye" 
+                        HeightRequest="40" 
+                        WidthRequest="40" 
+                        Clicked="btnImageClicked" 
+                        BackgroundColor="Transparent"/>
+                </StackLayout>
+                <Label 
+                    Text="Por favor, mínimo de oito caracteres, sendo um caractere especial (@!#$%-/:?_) e uma letra maiúscula."
+                    IsVisible="false" 
+                    x:Name="lbl_Aviso" 
+                    TextColor="Red" 
+                    VerticalOptions="Center" 
+                    HorizontalTextAlignment="Center"/>
+                <StackLayout 
+                    Orientation="Horizontal" 
+                    Spacing="10" 
+                    HorizontalOptions="CenterAndExpand">
+                    <Label Text="Esqueceu sua senha?" 
+                           TextColor="{DynamicResource Label_Cadastrar}" 
+                           HorizontalOptions="Center" 
+                           TextDecorations="Underline" >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                Tapped="EsqueciSenha_Tapped" 
+                                NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label 
+                        Text="Cadastrar" 
+                        TextColor="{DynamicResource Label_Cadastrar}" 
+                        HorizontalOptions="Center" 
+                        TextDecorations="Underline" >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                Tapped="ChamarPagCadastrar" 
+                                NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+                <StackLayout 
+                    Orientation="Horizontal" 
+                    HorizontalOptions="CenterAndExpand" 
+                    VerticalOptions="Center">
+                    <Button 
+                        Text="Limpar Campos" 
+                        BackgroundColor="DarkRed" 
+                        Clicked="btnLimparCampos" 
+                        TextColor="White" 
+                        CornerRadius="10" 
+                        FontAttributes="Bold"/>
+                    <Button 
+                        Text="Login" 
+                        BackgroundColor="DarkRed" 
+                        Clicked="btnEnviar" 
+                        TextColor="White" 
+                        FontAttributes="Bold" 
+                        CornerRadius="10"/>
+                </StackLayout>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLITE_CRUD.Perfil">
+    <ScrollView>
+        <AbsoluteLayout BackgroundColor="{DynamicResource Page_BackgroundColor}">
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,0.01" AbsoluteLayout.LayoutFlags="All" Orientation="Horizontal" Spacing="0">
+                <BoxView BackgroundColor="Green" HorizontalOptions="FillAndExpand" HeightRequest="10"/>
+                <BoxView BackgroundColor="RoyalBlue" HorizontalOptions="FillAndExpand" HeightRequest="10"/>
+                <BoxView BackgroundColor="#bc0000" HorizontalOptions="FillAndExpand" HeightRequest="10"/>
+            </StackLayout>
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0.25,1,0.8" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="Fill" Padding="25">
+                <ImageButton x:Name="btn_Foto" Source="user" Clicked="btn_FotoClicked" HorizontalOptions="Center" CornerRadius="100" 
+                             BackgroundColor="Transparent" WidthRequest="100" HeightRequest="100" Margin="0,30,0,0"/>
+                <Entry x:Name="ent_nome" TextColor="{DynamicResource Entry_TextColor}" IsReadOnly="True" HorizontalOptions="FillAndExpand" FontSize="Medium" 
+                       PlaceholderColor="{DynamicResource Entry_PlaceholderColor}"/>
+                <Entry x:Name="ent_cpf" TextColor="{DynamicResource Entry_TextColor}" IsReadOnly="True" HorizontalOptions="FillAndExpand" FontSize="Medium"
+                       PlaceholderColor="{DynamicResource Entry_PlaceholderColor}"/>
+                <Entry x:Name="ent_email" TextColor="{DynamicResource Entry_TextColor}" IsReadOnly="True" HorizontalOptions="FillAndExpand" FontSize="Medium" 
+                       PlaceholderColor="{DynamicResource Entry_PlaceholderColor}"/>
+                <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="ent_senha" TextColor="{DynamicResource Entry_TextColor}" IsPassword="True" Placeholder="Senha antiga" HorizontalOptions="FillAndExpand"
+                        FontSize="Medium" PlaceholderColor="{DynamicResource Entry_PlaceholderColor}"/>
+                    <ImageButton Source="eye" HeightRequest="35" WidthRequest="35" Clicked="btnImageClicked" 
+                        BackgroundColor="Transparent"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,20" x:Name="stack">
+                    <Entry x:Name="ent_nova_senha" TextColor="{DynamicResource Entry_TextColor}" IsPassword="True" Placeholder="Senha nova"  HorizontalOptions="FillAndExpand" 
+                           FontSize="Medium" TextChanged="ent_nova_senha_Changed" PlaceholderColor="{DynamicResource Entry_PlaceholderColor}"/>
+                    <ImageButton Source="eye" HeightRequest="35" WidthRequest="35" Clicked="btnImageClicked2" 
+                            BackgroundColor="Transparent"/>
+                </StackLayout>
+                <Label Text="Por favor, mínimo de oito caracteres, sendo um caractere especial (@!#$%-/:?_) e uma letra maiúscula."
+                        IsVisible="false" x:Name="lbl_Aviso" TextColor="Red" VerticalOptions="Center"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Button Text="Deletar cadastro" BackgroundColor="DarkRed" TextColor="White" FontAttributes="Bold" 
+                            Clicked="btn_DeletarClicked" CornerRadius="10"/>
+                    <Button Text="Alterar cadastro" BackgroundColor="DarkRed" TextColor="White" FontAttributes="Bold" 
+                            Clicked="btn_AlterarClicked"  CornerRadius="10" x:Name="btn_Alterar"/>
+                </StackLayout>
+            </StackLayout>
+        
+        </AbsoluteLayout>
+    </ScrollView>
+</ContentPage>
